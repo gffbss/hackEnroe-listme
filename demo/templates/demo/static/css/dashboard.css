@@ -27,6 +27,16 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+#img-animate {
+    -webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+}
+
+#img-animate:hover {
+  cursor:pointer;
+  margin-top: 5px;
+}
 
 /*
  * Sidebar
@@ -85,6 +95,13 @@ body {
   margin-top: 0;
 }
 
+
+@media (max-width: 325px) {
+  #img-animate:hover {
+  cursor:pointer;
+  margin-top: 0px;
+}
+}
 
 /*
  * Placeholder dashboard ideas

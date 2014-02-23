@@ -1,19 +1,5 @@
-// list1 = {
-// 	Name: "To Do",
-// 	listUrl: "todo.jpg",
-// 	listCode: "todo",
-
-// }
-
-// list2 = {
-// 	Name: "What to do",
-// 	listUrl: "whattodo.jpg",
-// 	listCode: "whattodo"
-// 	// fullListing: ["A", "B"]
-// }
-
 x=0;
-
+bountyBux = 0;
 
 
 var listsobj = {
@@ -24,7 +10,8 @@ user1 = {
 	Geoff:"Test",
 	Catchphrase: "BEEPBOOP",
 	faceUrl: "static/img/geoff.png",
-	Username: "gffbss"
+	Username: "gffbss",
+	bountyAmount: 0
 }
 
 
@@ -32,26 +19,32 @@ user2 = {
 	Name: "Kevin",
 	faceUrl: "static/img/kevin.jpeg",
 	Catchphrase: "The Legend",
-	Username: "holl"
+	Username: "holl",
+	bountyAmount: 0
 }
 
 user3 = {
 	Name: "Joeri",
 	faceUrl: "static/img/joeri.jpg",
 	Catchphrase: "Swiss Army Knife",
-	Username: "jman"
+	Username: "jman",
+	bountyAmount: 0
 }
 user4 = {
 	Name: "John",
 	faceUrl: "static/img/johnny.jpeg",
 	Catchphrase: "Johnny Be Good",
-	Username: "JBgood"
+	Username: "JBgood",
+	bountyAmount: 0
 }
 
 users = [user1, user2, user3, user4]
 
 
 $(document).ready(function(){
+
+
+
 	populateUsers()
 	populateList()
 
@@ -115,9 +108,11 @@ $(document).ready(function(){
 
 function populateUsers() {
 
+	$('#userList').html('')
+
 	for (i=0; i<users.length; i++)
 	{
-		$('#userList').append('<div class="col-xs-6 col-sm-3 placeholder"><img data-src="'+ users[i].faceUrl +'" class="img-responsive" alt="200x200" src="'+users[i].faceUrl+'"><h4>'+ users[i].Name+'</h4>' + '<span class="text-muted">'+users[i].Catchphrase+'</span>' + '<br>' + '<span class="badge">42</span>' + '</div>')
+		$('#userList').append('<div class="col-xs-6 col-sm-3 placeholder"><img data-src="'+ users[i].faceUrl +'" class="img-responsive" alt="200x200" src="'+users[i].faceUrl+'"><h4>'+ users[i].Name+'</h4>' + '<span class="text-muted">'+users[i].Catchphrase+'</span>' + '<br>' + '<span class="badge">'+ users[i].bountyAmount +'</span>' + '</div>')
 	}
 
 }
@@ -131,7 +126,7 @@ function populateList() {
 
 			if(listsobj.hasOwnProperty(key)){
         		
-				$('#listList').append("<li class='list-group-item'><a class='lister'  id='"+ listsobj[key].listCode +"'>Here's " + listsobj[key].Name + "</a></li>");
+				$('#listList').append("<li class='list-group-item'><a class='lister'  id='"+ listsobj[key].listCode +"'>" + listsobj[key].Name + "</a></li>");
 			}
 	}
  clicker();
@@ -153,10 +148,25 @@ function clicker() {
 
 		for (i=0; i<listsobj[fullList].fullLister.length; i++)
 		{
-			$('#listList').append("<li id='"+listsobj[fullList].fullLister[i]+"list'><li class='list-group-item'>" + listsobj[fullList].fullLister[i]+ " </a><button class='btn btn-success' id='"+listsobj[fullList].fullLister[i]+"check'>&#10003;</button><button class='btn btn-danger' id='"+listsobj[fullList].fullLister[i]+"remove'>X</button></li>");
+			$('#listList').append("<li id='"+listsobj[fullList].fullLister[i].replace(/\s/g, '')+"list'><li class='list-group-item'>" + listsobj[fullList].fullLister[i].replace(/\s/g, '')+ " </a><button class='btn btn-success' id='"+listsobj[fullList].fullLister[i].replace(/\s/g, '')+"check'>&#10003;</button><button class='btn btn-danger' id='"+listsobj[fullList].fullLister[i].replace(/\s/g, '')+"remove'>X</button></li>");
+
+			$('#'+listsobj[fullList].fullLister[i].replace(/\s/g, '')+'check').click(function(){
+				$(this).parent().css('text-decoration','line-through');
+				user1.bountyAmount+= 1;
+
+				console.log(user1.bountyAmount);
+				populateUsers();
+
+				$(this).hide();
+			
+			})
+			$('#'+listsobj[fullList].fullLister[i].replace(/\s/g, '')+'remove').click(function(){
+				$(this).parent().hide()
+			})
 		}
 
 		$('#listList').append("<button id='mainLists' class='btn btn-default'>Go Back</button>")
+
 
 
 		$('#mainLists').click(function(){

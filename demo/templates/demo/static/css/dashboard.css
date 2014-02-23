@@ -18,6 +18,8 @@ body {
 
  #profile {
   border-radius: 50;
+  margin-left: auto;
+  margin-right: auto;
  }
 /*
  * Global add-ons

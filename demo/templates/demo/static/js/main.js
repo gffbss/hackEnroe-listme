@@ -131,7 +131,7 @@ function populateList() {
 
 			if(listsobj.hasOwnProperty(key)){
         		
-				$('#listList').append("<li><a class='lister' id='"+ listsobj[key].listCode +"'>Here's " + listsobj[key].Name + "</a></li>");
+				$('#listList').append("<li class='list-group-item'><a class='lister'  id='"+ listsobj[key].listCode +"'>Here's " + listsobj[key].Name + "</a></li>");
 			}
 	}
  clicker();
@@ -146,15 +146,17 @@ function clicker() {
 
 		console.log(listsobj[fullList])
 
+              // <span class="glyphicon glyphicon-ok"></span>
+
 
 		$('#listList').html('');
 
 		for (i=0; i<listsobj[fullList].fullLister.length; i++)
 		{
-			$('#listList').append("<li id='"+listsobj[fullList].fullLister[i]+"list'><a class='lister'>" + listsobj[fullList].fullLister[i]+ " </a><button class='chk' id='"+listsobj[fullList].fullLister[i]+"check'>&#10003;</button><button class='remover' id='"+listsobj[fullList].fullLister[i]+"remove'>X</button></li>");
+			$('#listList').append("<li id='"+listsobj[fullList].fullLister[i]+"list'><li class='list-group-item'>" + listsobj[fullList].fullLister[i]+ " </a><button class='btn btn-success' id='"+listsobj[fullList].fullLister[i]+"check'>&#10003;</button><button class='btn btn-danger' id='"+listsobj[fullList].fullLister[i]+"remove'>X</button></li>");
 		}
 
-		$('#listList').append("<button id='mainLists'>Go Back</button>")
+		$('#listList').append("<button id='mainLists' class='btn btn-default'>Go Back</button>")
 
 
 		$('#mainLists').click(function(){

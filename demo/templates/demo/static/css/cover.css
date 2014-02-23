@@ -45,10 +45,9 @@ body {
 
 /* Custom CSS styles by Johnny */
 
-
-#signin {
-  box-shadow: 0px 0px 8px rgba(255,255,255,.9);
-}
+h3.masthead-brand {text-align: center;}
+p.lead {color: white;}
+#signin {box-shadow: 0px 0px 8px rgba(255,255,255,.9);}
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {

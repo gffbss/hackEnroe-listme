@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img id = "title" class="img-responsive" data-src="static/img/nav-title.png" alt="cohab.me" src="static/img/nav-title.png"></a>
+          <a class="navbar-brand" href="home1.html"><img id = "title" class="img-responsive" data-src="static/img/nav-title.png" alt="cohab.me" src="static/img/nav-title.png"></a>
         </div>
         <div class="navbar-collapse collapse">
           <!-- <ul class="nav navbar-nav navbar-right">
@@ -50,7 +50,9 @@
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview</a></li>
             <li><a href="#" id='makenew'>Make a List</a></li>
-            <li><a href="index.html">My Teams</a></li>
+            <li><a href="index.html">My Cohabs</a></li>
+            <li id="new-cohab"><a href="#">New Cohab</a></li>
+
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Geoff Boss</h1>
@@ -72,7 +74,7 @@
 <!-- Hard coded teams for demo purposes -->
           <h1 class="page-header">My Cohabs</h1>
 
-          <div class="row placeholders">
+          <div class="row placeholders" id="cohabList">
             <div class="col-xs-6 col-sm-3 placeholder">
               <a href="index.html">
                 <img data-src="static/img/rocket-ship.jpg" id="img-animate" class="img-responsive" alt="200x200" src="static/img/rocket-ship.jpg">
@@ -92,11 +94,11 @@
               <h4>Supper Club</h4>
               <span class="text-muted">Dinner with roomies</span>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
+            <!-- <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="static/img/geoff.png" id="img-animate" class="img-responsive" alt="200x200" src="static/img/geoff.png">
               <h4>Just Me</h4>
               <span class="text-muted">Little things to remember</span>
-            </div>
+            </div> -->
           </div>
 
           </div>
@@ -109,19 +111,19 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Add Some Items</h4>
+            <h4 class="modal-title">Add A New Cohab</h4>
           </div>
           <div class="modal-body">
-            <label>What would you like to name the list? <input id="userInput"></input></label>
-            <p>Add items to the list:</p>
-            <input id="userInputList" type="text" class="form-control"></input><button id="addItem" class="btn btn-default">Add Item</button>
+            <label><p>What would you like to name the cohab?</p> <input id="userInput" class="form-control"></input></label>
+            <p>Please provide a bit more info:</p>
+            <input id="newCohab" type="text" class="form-control"></input>
             <div>
               <ul id ="userCreator">
               </ul>
             </div>
           </div>
         <div class="modal-footer">
-          <button class="btn btn-primary" data-dismiss="modal" class="refreshIt" id="creater">Create List</button>
+          <button class="btn btn-primary" data-dismiss="modal" class="refreshIt" id="creater">Create Cohab</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -133,7 +135,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/docs.min.js"></script>
-<!--    <script type="text/javascript" src="static/js/main.js"></script>  -->
+   <script type="text/javascript" src="static/js/profile.js"></script> 
 
   
 

@@ -10,6 +10,10 @@ body {
  ul, ol {
   list-style-type: none;
  }
+
+ .btn {
+  margin-left: 5px;
+ }
 /*
  * Global add-ons
  */

@@ -117,7 +117,7 @@ function populateUsers() {
 
 	for (i=0; i<users.length; i++)
 	{
-		$('#userList').append('<div class="col-xs-6 col-sm-3 placeholder"><img data-src="'+ users[i].faceUrl +'" class="img-responsive" alt="200x200" src="'+users[i].faceUrl+'"><h4>'+ users[i].Name+'</h4><span class="text-muted">'+users[i].Catchphrase+'</span></div>')
+		$('#userList').append('<div class="col-xs-6 col-sm-3 placeholder"><img data-src="'+ users[i].faceUrl +'" class="img-responsive" alt="200x200" src="'+users[i].faceUrl+'"><h4>'+ users[i].Name+'</h4>' + '<span class="text-muted">'+users[i].Catchphrase+'</span>' + '<br>' + '<span class="badge">42</span>' + '</div>')
 	}
 
 }

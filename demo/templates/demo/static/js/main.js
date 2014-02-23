@@ -7,7 +7,7 @@ var listsobj = {
 }
 
 user1 = {
-	Geoff:"Test",
+	Name:"Geoff",
 	Catchphrase: "BEEPBOOP",
 	faceUrl: "static/img/geoff.png",
 	Username: "gffbss",

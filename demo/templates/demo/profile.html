@@ -1,0 +1,118 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>List.me</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/dashboard.css" rel="stylesheet">
+    <link href="static/css/carousel.css" rel="stylesheet">
+
+</head>
+
+  <body style="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="home1.html">List.me</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul> -->
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Find Something...">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview</a></li>
+            <li><a href="#" id='makenew'>Make a List</a></li>
+            <li><a href="#">Other Teams</a></li>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row placeholders" id="userList">
+            <!-- Users dynamically created here. -->
+            <div class="row featurette" id="hacks">
+              <div class="col-md-7">
+                <h2 class="featurette-heading">My Face. <span class="text-muted">It's nice and I have lots of lists and stuff</p>
+              </div>
+              <div class="col-md-5">
+                <img id = "profile" class="featurette-image img-responsive" data-src="static/img/kevin.jpeg" alt="Hack 1" src="static/img/kevin.jpeg">
+              </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+          </div>
+
+          <h2 class="sub-header">Items List</h2>
+          <div class="well">
+            <ul id = "listList">
+
+
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="createModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Add Some Items</h4>
+          </div>
+          <div class="modal-body">
+            <label>What would you like to name the list? <input id="userInput"></input></label>
+            <p>Add items to the list:</p>
+            <input id="userInputList" type="text" class="form-control"></input><button id="addItem" class="btn btn-default">Add Item</button>
+            <div>
+              <ul id ="userCreator">
+              </ul>
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-dismiss="modal" class="refreshIt" id="creater">Create List</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/docs.min.js"></script>
+<!--    <script type="text/javascript" src="static/js/main.js"></script>  -->
+
+  
+
+</body></html>

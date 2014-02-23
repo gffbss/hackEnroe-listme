@@ -9,10 +9,10 @@
     <title>List.me</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="static/css/dashboard.css" rel="stylesheet">
 
 <script src='https://cdn.firebase.com/v0/firebase.js'></script>
 
@@ -79,10 +79,16 @@
             <h4 class="modal-title">New List</h4>
           </div>
           <div class="modal-body">
-            <p>Hello</p>
+            <label>What would you like to name the list? <input id="userInput"></input></label>
+            <p>Add items to the list:</p>
+            <input id="userInputList"></input><button id="addItem">Add Item</button>
+            <div>
+              <ul id ="userCreator">
+              </ul>
+            </div>
           </div>
         <div class="modal-footer">
-          <button class="btn btn-primary" data-dismiss="modal" class="refreshIt">Create List</button>
+          <button class="btn btn-primary" data-dismiss="modal" class="refreshIt" id="creater">Create List</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -92,9 +98,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/docs.min.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
 
   
 

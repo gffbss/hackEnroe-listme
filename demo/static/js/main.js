@@ -37,27 +37,27 @@ var listsobj = {
 user1 = {
 	Geoff:"Test",
 	Catchphrase: "BEEPBOOP",
-	faceUrl: "img/geoff.png",
+	faceUrl: "static/img/geoff.png",
 	Username: "gffbss"
 }
 
 
 user2 = {
 	Name: "Kevin",
-	faceUrl: "img/kevin.jpeg",
+	faceUrl: "static/img/kevin.jpeg",
 	Catchphrase: "The Legend",
 	Username: "holl"
 }
 
 user3 = {
 	Name: "Joeri",
-	faceUrl: "img/joeri.jpg",
+	faceUrl: "static/img/joeri.jpg",
 	Catchphrase: "Swiss Army Knife",
 	Username: "jman"
 }
 user4 = {
 	Name: "John",
-	faceUrl: "img/johnny.jpeg",
+	faceUrl: "static/img/johnny.jpeg",
 	Catchphrase: "Johnny Be Good",
 	Username: "JBgood"
 }

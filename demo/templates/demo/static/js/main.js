@@ -1,36 +1,119 @@
+// list1 = {
+// 	Name: "To Do",
+// 	listUrl: "todo.jpg",
+// 	listCode: "todo",
+
+// }
+
+// list2 = {
+// 	Name: "What to do",
+// 	listUrl: "whattodo.jpg",
+// 	listCode: "whattodo"
+// 	// fullListing: ["A", "B"]
+// }
+
+x=0;
+
+
+
+var listsobj = {
+
+}
+
+user1 = {
+	Geoff:"Test",
+	Catchphrase: "BEEPBOOP",
+	faceUrl: "static/img/geoff.png",
+	Username: "gffbss"
+}
+
+
+user2 = {
+	Name: "Kevin",
+	faceUrl: "static/img/kevin.jpeg",
+	Catchphrase: "The Legend",
+	Username: "holl"
+}
+
+user3 = {
+	Name: "Joeri",
+	faceUrl: "static/img/joeri.jpg",
+	Catchphrase: "Swiss Army Knife",
+	Username: "jman"
+}
+user4 = {
+	Name: "John",
+	faceUrl: "static/img/johnny.jpeg",
+	Catchphrase: "Johnny Be Good",
+	Username: "JBgood"
+}
+
+users = [user1, user2, user3, user4]
+
+
 $(document).ready(function(){
 	populateUsers()
 	populateList()
+
+	var passer = []
+
+	clicker()
+	
+
+	$('.chk').click(function () {
+
+		console.log("CLICKED");
+		var wizard = $(this).attr('id');
+
+		console.log(wizard);
+
+	})
+
+	$('#makenew').click(function() {
+		$('#createModal').modal('show');   
+	})
+
+
+	$('#addItem').click(function (){
+
+		$('#userCreator').append("<li>"+$('#userInputList').val()+"</li>");
+
+		passer.push($('#userInputList').val())
+
+		$('#userInputList').val('');
+	});
+
+	$('#creater').click(function(){
+		
+		var newObj = {
+			Name : $('#userInput').val(),
+			listCode : $('#userInput').val(),
+			fullLister: passer
+		}
+
+		listsobj[$('#userInput').val()] = newObj;
+
+		$('#listList').html('');
+
+		populateList();
+
+		console.log(listsobj)
+
+		$('#userInputList').val('');
+		$('#userInput').val('');
+		$('#userCreator').html('');
+
+		 passer = [];
+
+
+	})
+
+
+
+
 })
 
 function populateUsers() {
-	//The following is ASSUIMG classes and ids.
-
-	user1 = {
-		Geoff:"Test",
-		faceUrl: "static/img/kevin.jpeg",
-		Username: "geoff5"
-	}
-
-	user2 = {
-		Name: "Kevin",
-		faceUrl: "static/img/kevin.jpeg",
-		Catchphrase: "The Legend"
-	}
-
-	user3 = {
-		Name: "Joeri",
-		faceUrl: "static/img/joeri.jpg",
-		Catchphrase: "Swiss Army Knife"
-	}
-	user4 = {
-		Name: "John",
-		faceUrl: "static/img/johnny.jpeg",
-		Catchphrase: "Johnny Be Good"
-	}
-
-
-	users = [user1, user2, user3, user4]
 
 	for (i=0; i<users.length; i++)
 	{
@@ -41,20 +124,42 @@ function populateUsers() {
 
 function populateList() {
 
-	list1 = {
-		Name: "To Do",
-		listUrl: "todo.jpg"
-	}
+	$('#listList').html('');
 
-	list2 = {
-		Name: "What to do",
-		listUrl: "whattodo.jpg"
-	}
-
-	lists = [list1,  list2]
-
-	for (i=0; i<lists.length; i++)
+	for (var key in listsobj)
 	{
-		$('#listList').append("<li><a href src='"+ lists[i].listUrl+ "'>Here's " + lists[i].Name + "</a></li>");
+
+			if(listsobj.hasOwnProperty(key)){
+        		
+				$('#listList').append("<li><a class='lister' id='"+ listsobj[key].listCode +"'>Here's " + listsobj[key].Name + "</a></li>");
+			}
 	}
+ clicker();
+}
+
+function clicker() {
+
+	$('.lister').on('click', function () {
+		console.log("CLICKED!")
+		var fullList = $(this).attr('id');
+		
+
+		console.log(listsobj[fullList])
+
+
+		$('#listList').html('');
+
+		for (i=0; i<listsobj[fullList].fullLister.length; i++)
+		{
+			$('#listList').append("<li id='"+listsobj[fullList].fullLister[i]+"list'><a class='lister'>" + listsobj[fullList].fullLister[i]+ " </a><button class='chk' id='"+listsobj[fullList].fullLister[i]+"check'>&#10003;</button><button class='remover' id='"+listsobj[fullList].fullLister[i]+"remove'>X</button></li>");
+		}
+
+		$('#listList').append("<button id='mainLists'>Go Back</button>")
+
+
+		$('#mainLists').click(function(){
+			populateList();
+		})
+
+	});
 }

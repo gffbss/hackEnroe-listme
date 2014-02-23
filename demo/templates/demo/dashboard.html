@@ -13,7 +13,8 @@
 
     <!-- Custom styles for this template -->
     <link href="static/css/dashboard.css" rel="stylesheet">
-    <link href="static/css/carousel.css" rel="stylesheet">
+
+<script src='https://cdn.firebase.com/v0/firebase.js'></script>
 
 </head>
 
@@ -28,8 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img id = "title" class="img-responsive" data-src="static/img/nav-title.png" alt="cohab.me" src="static/img/nav-title.png"></a>
-        </div>
+          <a class="navbar-brand" href="profile.html"><img id = "title" class="img-responsive" data-src="static/img/nav-title.png" alt="cohab.me" src="static/img/nav-title.png"></a>        </div>
         <div class="navbar-collapse collapse">
           <!-- <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Dashboard</a></li>
@@ -48,71 +48,38 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
+            <li class="active"><a href="profile.html">Me</a></li>
             <li><a href="#" id='makenew'>Make a List</a></li>
-            <li><a href="index.html">My Teams</a></li>
+            <li><a href="#">Other Teams</a></li>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Geoff Boss</h1>
+          <h1 class="page-header">The Compound Dashboard</h1>
 
           <div class="row placeholders" id="userList">
             <!-- Users dynamically created here. -->
-            <div class="row featurette" id="hacks">
-              <div class="col-md-7">
-                <h2 class="featurette-heading">My Face. <span class="text-muted">It's nice and I have lots of lists and stuff. Looking forward to getting organized.</p>
-              </div>
-              <div class="col-md-5">
-                <img id = "profile" class="featurette-image img-responsive" data-src="static/img/geoff.png" alt="Hack 1" src="static/img/geoff.png">
-              </div>
-      </div>
-
-      <hr class="featurette-divider">
-          <div class="well">
-
-<!-- Hard coded teams for demo purposes -->
-          <h1 class="page-header">My Cohabs</h1>
-
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <a href="index.html">
-                <img data-src="static/img/rocket-ship.jpg" id="img-animate" class="img-responsive" alt="200x200" src="static/img/rocket-ship.jpg">
-              </a>
-              <h4>RocektU</h4>
-              <span class="text-muted">Lauch Hackathon Project</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <a href="dashboard.html">
-                <img data-src="static/img/the-house.jpg" id="img-animate" class="img-responsive" alt="200x200" src="static/img/the-house.jpg">
-              </a>
-              <h4>The Compund</h4>
-              <span class="text-muted">My House</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="static/img/supper-club.jpg" id="img-animate" class="img-responsive" alt="200x200" src="static/img/supper-club.jpg">
-              <h4>Supper Club</h4>
-              <span class="text-muted">Dinner with roomies</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="static/img/geoff.png" id="img-animate" class="img-responsive" alt="200x200" src="static/img/geoff.png">
-              <h4>Just Me</h4>
-              <span class="text-muted">Little things to remember</span>
-            </div>
           </div>
+
+          <h2 class="sub-header">Items List</h2>
+          <div class="well">
+            <ul id = "listList">
+
+
+            </ul>
 
           </div>
         </div>
       </div>
-<!--     </div>
- -->
+    </div>
+
     <div class="modal fade" id="createModal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Add Some Items</h4>
+            <h4 class="modal-title">Add Whatever You'd Like</h4>
           </div>
           <div class="modal-body">
-            <label>What would you like to name the list? <input id="userInput"></input></label>
+            <label>What would you like to name the cohab list? <input id="userInput"></input></label>
             <p>Add items to the list:</p>
             <input id="userInputList" type="text" class="form-control"></input><button id="addItem" class="btn btn-default">Add Item</button>
             <div>
@@ -133,7 +100,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/docs.min.js"></script>
-<!--    <script type="text/javascript" src="static/js/main.js"></script>  -->
+    <script type="text/javascript" src="static/js/dashboard.js"></script>
 
   
 
